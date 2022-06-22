@@ -85,7 +85,7 @@ bool is_point_in_tri(Point p, Point p0, Point p1, Point p2);
 
 void get_point_weight(float *weight, Point p, Point p0, Point p1, Point p2);
 
-void _get_tri_normal(float *tri_normal, float *vertices, int *triangles, int ntri, bool norm_flg);
+void _get_tri_normal(float *tri_normal, float *vertices, int *triangles, int ntri, bool norm_flg=true);
 
 void _get_ver_normal(float *ver_normal, float *tri_normal, int *triangles, int nver, int ntri);
 
@@ -97,7 +97,7 @@ void _rasterize_triangles(
 
 void _rasterize(
         unsigned char *image, float *vertices, int *triangles, float *colors,
-        float *depth_buffer, int ntri, int h, int w, int c, float alpha, bool reverse);
+        float *depth_buffer, int ntri, int h, int w, int c, float alpha, bool reverse = true);
 
 void _render_texture_core(
         float *image, float *vertices, int *triangles,

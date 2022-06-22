@@ -23,11 +23,14 @@ def convert_type(obj):
 class RenderPipeline(object):
     def __init__(self, **kwargs):
         self.intensity_ambient = convert_type(kwargs.get('intensity_ambient', 0.3))
+        self.color_ambient = convert_type(kwargs.get('color_ambient', (1, 1, 1)))
+
         self.intensity_directional = convert_type(kwargs.get('intensity_directional', 0.6))
+        self.color_directional = convert_type(kwargs.get('color_directional', (1, 1, 1)))
+
         self.intensity_specular = convert_type(kwargs.get('intensity_specular', 0.1))
         self.specular_exp = kwargs.get('specular_exp', 5)
-        self.color_ambient = convert_type(kwargs.get('color_ambient', (1, 1, 1)))
-        self.color_directional = convert_type(kwargs.get('color_directional', (1, 1, 1)))
+
         self.light_pos = convert_type(kwargs.get('light_pos', (0, 0, 5)))
         self.view_pos = convert_type(kwargs.get('view_pos', (0, 0, 5)))
 
@@ -70,10 +73,8 @@ class RenderPipeline(object):
             render_img = rasterize(vertices, triangles, texture, bg=bg)
             return render_img
 
-
 def main():
     pass
-
 
 if __name__ == '__main__':
     main()

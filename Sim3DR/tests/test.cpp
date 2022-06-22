@@ -65,9 +65,13 @@ void test_load_obj() {
 void test_render() {
     // 1. loading obj
 //    const char *fp = "/Users/gjz/gjzprojects/Sim3DR/data/vd005_mesh.obj";
-    const char *fp = "/Users/gjz/gjzprojects/Sim3DR/data/face1.obj";
+    //const char *fp = "/Users/gjz/gjzprojects/Sim3DR/data/face1.obj";
+	const char *fp = R"(H:\arc3d\research\3DDFA_V2\save_mesh.obj)";
     int nver = 35709; //53215; //35709;
     int ntri = 70789; //105840;//70789;
+
+	nver = 38365;
+	ntri = 76073;
 
     auto *vertices = new float[3 * nver];
     auto *colors = new float[3 * nver];
@@ -166,7 +170,7 @@ int main(int argc, char *argv[]) {
 //    test_getPointWeight();
 //    test_get_tri_normal();
 //    test_load_obj();
-//    test_render();
-    test_light();
+    test_render();
+    //test_light();
     return 0;
 }
